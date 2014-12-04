@@ -1,7 +1,12 @@
 from django.contrib import admin
-from polls.models import Question
+from polls.models import Question, Choice
 
 # Register your models here.
+
+
+class ChoiceInline(admin.StackedInline):
+	model = Choice
+	extra = 3
 
 
 class QuestionAdmin(admin.ModelAdmin):
@@ -14,7 +19,9 @@ class QuestionAdmin(admin.ModelAdmin):
 		('Date information', {'fields': ['pub_date'], 'classes': ['collapse']}),
 		# adds the arbitrary html class collapse.
 	]
+	inlines = [ChoiceInline]
 
 # hooks models to the admin site.
 # admin.site.register(Question)
 admin.site.register(Question, QuestionAdmin)
+admin.site.register(Choice)
