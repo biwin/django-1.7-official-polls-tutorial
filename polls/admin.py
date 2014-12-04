@@ -6,7 +6,7 @@ from polls.models import Question, Choice
 
 class ChoiceInline(admin.StackedInline):
 	model = Choice
-	extra = 3
+	extra = 3  # number of choices
 
 
 class QuestionAdmin(admin.ModelAdmin):
