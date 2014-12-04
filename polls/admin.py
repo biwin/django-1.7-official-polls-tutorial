@@ -3,8 +3,18 @@ from polls.models import Question, Choice
 
 # Register your models here.
 
+# # # choices stacked inline # # #
 
-class ChoiceInline(admin.StackedInline):
+
+# class ChoiceInline(admin.StackedInline):
+# 	model = Choice
+# 	extra = 3  # number of choices
+
+
+# # # choices in Tabular form # # #
+
+
+class ChoiceInline(admin.TabularInline):
 	model = Choice
 	extra = 3  # number of choices
 
