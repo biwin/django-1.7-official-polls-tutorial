@@ -24,6 +24,9 @@ class QuestionAdmin(admin.ModelAdmin):
 	# # pub_date moved to the top of the list
 	# using fieldsets to make fields more readable.
 
+	list_display = ('question_text', 'pub_date')
+	# display list as question_text and pub_date
+
 	fieldsets = [
 		(None, {'fields': ['question_text']}),
 		('Date information', {'fields': ['pub_date'], 'classes': ['collapse']}),
